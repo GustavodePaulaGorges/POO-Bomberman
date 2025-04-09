@@ -48,5 +48,17 @@ namespace Bomberman1
                 Console.Write('|');
             }
         }
+
+        public bool podeMover(int x, int y)
+        {
+            bool pode = true;
+
+            if (x <= this.coluna) pode = false;
+            if (x >= this.coluna + this.largura) pode = false;
+            if (y <= this.linha) pode = false;
+            if (y >= this.linha + this.altura) pode = false;
+
+            return pode;
+        }
     }
 }
