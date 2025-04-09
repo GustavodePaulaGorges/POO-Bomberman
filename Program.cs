@@ -29,7 +29,11 @@ namespace Bomberman1
 
                 campo.desenhar();
 
-                foreach (var jog in jogadores) jog.mover(tecla.Key);
+                foreach (var jog in jogadores)
+                {
+
+                    jog.mover(tecla.Key);
+                }
 
             }
 

@@ -8,8 +8,8 @@ namespace Bomberman1
 {
     internal class Jogador
     {
-        private int x;
-        private int y;
+        public int x;
+        public int y;
         private string simbolo;
         private ConsoleKey cma;
         private ConsoleKey bxo;
