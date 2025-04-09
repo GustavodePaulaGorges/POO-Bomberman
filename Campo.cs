@@ -8,19 +8,11 @@ namespace Bomberman1
 {
     public class Campo
     {
-        /*
-         * propriedades / atributos
-         */
         private int coluna;
         private int linha;
         private int altura;
         private int largura;
 
-        /*
-         * métodos / operações
-         */
-
-        // método construtor
         public Campo(int col, int lin, int alt, int lar)
         {
             this.coluna = col;

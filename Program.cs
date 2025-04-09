@@ -10,29 +10,27 @@ namespace Bomberman1
     {
         static void Main(string[] args)
         {
-            // instanciando um novo objeto da classe campo
-            // classe objeto  new construtor(param1, param2...)
-            Campo campo = new Campo(1, 1, 20, 70);
+            List<Jogador> jogadores = new List<Jogador>();
+
+            Campo campo = new Campo(1, 1, 20, 80);
             campo.desenhar();
 
-            Jogador jog1 = new Jogador(2, 2, "#", 
-                ConsoleKey.W, ConsoleKey.S, 
-                ConsoleKey.A, ConsoleKey.D);
-            jog1.desenhar();
+            jogadores.Add(new Jogador(3, 3, "#", ConsoleKey.W, ConsoleKey.S, ConsoleKey.A, ConsoleKey.D));
+            jogadores.Add(new Jogador(60, 15, "%", ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.LeftArrow, ConsoleKey.RightArrow));
+            jogadores.Add(new Jogador(30, 8, "@", ConsoleKey.Y, ConsoleKey.H, ConsoleKey.G, ConsoleKey.J));
+            jogadores.Add(new Jogador(50, 5, "&", ConsoleKey.NumPad8, ConsoleKey.NumPad5, ConsoleKey.NumPad4, ConsoleKey.NumPad6));
 
-            Jogador jog2 = new Jogador(70, 20, "%",
-                ConsoleKey.UpArrow, ConsoleKey.DownArrow,
-                ConsoleKey.LeftArrow, ConsoleKey.RightArrow);
-            jog2.desenhar();
-
+            Console.CursorVisible = false;
             ConsoleKeyInfo tecla;
             while (true)
             {
                 tecla = Console.ReadKey();
                 if (tecla.Key == ConsoleKey.Escape) break;
 
-                jog1.mover(tecla.Key);
-                jog2.mover(tecla.Key);
+                campo.desenhar();
+
+                foreach (var jog in jogadores) jog.mover(tecla.Key);
+
             }
 
         }

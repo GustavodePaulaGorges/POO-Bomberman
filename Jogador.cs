@@ -8,9 +8,6 @@ namespace Bomberman1
 {
     internal class Jogador
     {
-        /*
-         * propriedades 
-         */
         private int x;
         private int y;
         private string simbolo;
@@ -20,11 +17,7 @@ namespace Bomberman1
         private ConsoleKey dir;
 
 
-        /*
-         * metodos
-         */
 
-        // metodo construtor
         public Jogador(int x, int y, string simbolo,
             ConsoleKey cima, ConsoleKey baixo,
             ConsoleKey esquerda, ConsoleKey direita )
@@ -36,6 +29,8 @@ namespace Bomberman1
             this.bxo = baixo;
             this.esq = esquerda;
             this.dir = direita;
+
+            this.desenhar();
         }
 
         public void desenhar()
