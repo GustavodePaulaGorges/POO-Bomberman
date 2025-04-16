@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bomberman1
+namespace Bomberman
 {
     public class Campo
     {
@@ -49,14 +49,14 @@ namespace Bomberman1
             }
         }
 
-        public bool podeMover(int x, int y)
+        public bool podeMover(Coordenada pos)
         {
             bool pode = true;
 
-            if (x <= this.coluna) pode = false;
-            if (x >= this.coluna + this.largura) pode = false;
-            if (y <= this.linha) pode = false;
-            if (y >= this.linha + this.altura) pode = false;
+            if (pos.X <= this.coluna) pode = false;
+            if (pos.X >= this.coluna + this.largura) pode = false;
+            if (pos.Y <= this.linha) pode = false;
+            if (pos.Y >= this.linha + this.altura) pode = false;
 
             return pode;
         }

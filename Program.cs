@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bomberman1
+namespace Bomberman
 {
     internal class Program
     {
@@ -24,15 +24,16 @@ namespace Bomberman1
             ConsoleKeyInfo tecla;
             while (true)
             {
-                tecla = Console.ReadKey();
+                tecla = Console.ReadKey(true);
                 if (tecla.Key == ConsoleKey.Escape) break;
 
-                campo.desenhar();
-
-                foreach (var jog in jogadores)
+                foreach(var jog in jogadores)
                 {
+                    Coordenada pos = jog.simularMovimento(tecla.Key);
 
-                    jog.mover(tecla.Key);
+                    if (campo.podeMover(pos))
+                        jog.mover(tecla.Key);
+                        
                 }
 
             }
